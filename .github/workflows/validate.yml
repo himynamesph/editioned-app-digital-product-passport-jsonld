@@ -1,5 +1,3 @@
-$ cat /tmp/validate.yml.hold
-
 name: Validate JSON-LD examples
 
 on:
