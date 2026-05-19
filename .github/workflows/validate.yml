@@ -18,24 +18,33 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install ajv-cli
-        run: npm install -g ajv-cli@5 ajv-formats@3
+      - name: Install ajv
+        run: npm install ajv@8 ajv-formats@3
 
       - name: Validate examples against JSON Schema
         run: |
-          set -e
-          for f in examples/*.jsonld; do
-            echo ""
-            echo "==> Validating $f"
-            ajv validate \
-              -s schema/dpp-1.0.schema.json \
-              -d "$f" \
-              -c ajv-formats \
-              --strict=false \
-              --all-errors
-          done
-          echo ""
-          echo "All examples validated."
+          node <<'EOF'
+          const Ajv = require('ajv');
+          const addFormats = require('ajv-formats');
+          const fs = require('fs');
+          const path = require('path');
+          const ajv = new Ajv({ allErrors: true, strict: false });
+          addFormats(ajv);
+          const schema = JSON.parse(fs.readFileSync('schema/dpp-1.0.schema.json', 'utf8'));
+          const validate = ajv.compile(schema);
+          let allPass = true;
+          for (const f of fs.readdirSync('examples').filter(n => n.endsWith('.jsonld'))) {
+            const data = JSON.parse(fs.readFileSync(path.join('examples', f), 'utf8'));
+            const ok = validate(data);
+            console.log((ok ? 'OK   ' : 'FAIL ') + f);
+            if (!ok) {
+              allPass = false;
+              console.log(JSON.stringify(validate.errors, null, 2));
+            }
+          }
+          if (!allPass) process.exit(1);
+          console.log('\nAll examples validated.');
+          EOF
 
       - name: Parse JSON-LD context (well-formed check)
         run: |
