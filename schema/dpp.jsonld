@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gs1": "https://gs1.org/voc/",
+    "dpp": "https://editioned.app/vocab/dpp#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "editionNumber": {
+      "@id": "dpp:editionNumber",
+      "@type": "xsd:integer"
+    },
+    "editionTotal": {
+      "@id": "dpp:editionTotal",
+      "@type": "xsd:integer"
+    },
+    "euOperator": {
+      "@id": "dpp:euOperator",
+      "@type": "xsd:string"
+    },
+    "dateManufactured": {
+      "@id": "dpp:dateManufactured",
+      "@type": "xsd:date"
+    },
+    "carbonFootprint": {
+      "@id": "dpp:carbonFootprint",
+      "@type": "schema:QuantitativeValue"
+    },
+    "recycledContentPercent": {
+      "@id": "dpp:recycledContentPercent",
+      "@type": "xsd:integer"
+    },
+    "expectedLifespan": {
+      "@id": "dpp:expectedLifespan",
+      "@type": "schema:QuantitativeValue"
+    },
+    "repairInstructions": {
+      "@id": "dpp:repairInstructions",
+      "@type": "@id"
+    },
+    "conformityMarkings": {
+      "@id": "dpp:conformityMarkings",
+      "@container": "@set"
+    },
+    "reachSvhc": {
+      "@id": "dpp:reachSvhc",
+      "@type": "xsd:string"
+    },
+    "materialComposition": {
+      "@id": "dpp:materialComposition",
+      "@container": "@set"
+    },
+    "recyclability": {
+      "@id": "dpp:recyclability",
+      "@type": "xsd:string"
+    },
+    "repairScore": {
+      "@id": "dpp:repairScore",
+      "@type": "xsd:decimal"
+    }
+  }
+}

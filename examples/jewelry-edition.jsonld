@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "dpp": "https://editioned.app/vocab/dpp#"
+    }
+  ],
+  "@type": "Product",
+  "@id": "https://example.com/products/hooded-figure-pendant-iii",
+  "name": "Hooded Figure Pendant (Edition III of III)",
+  "sku": "HFP-III",
+  "brand": {
+    "@type": "Brand",
+    "name": "Example Atelier",
+    "url": "https://example.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Example Atelier",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "TR",
+      "addressLocality": "Istanbul"
+    },
+    "dpp:euOperator": "Example Atelier S.r.l."
+  },
+  "countryOfOrigin": "TR",
+  "material": "18K gold",
+  "dpp:editionNumber": 3,
+  "dpp:editionTotal": 3,
+  "dpp:dateManufactured": "2026-04-08",
+  "dpp:carbonFootprint": {
+    "@type": "QuantitativeValue",
+    "value": 2.4,
+    "unitCode": "KGM"
+  },
+  "dpp:recycledContentPercent": 100,
+  "dpp:expectedLifespan": {
+    "@type": "QuantitativeValue",
+    "value": 100,
+    "unitCode": "ANN"
+  },
+  "dpp:repairInstructions": "https://example.com/care/jewelry",
+  "dpp:materialComposition": [
+    { "material": "recycled 18K gold", "percentage": 100 }
+  ],
+  "dpp:conformityMarkings": ["REACH"]
+}

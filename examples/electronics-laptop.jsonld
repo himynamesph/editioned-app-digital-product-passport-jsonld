@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "gs1": "https://gs1.org/voc/",
+      "dpp": "https://editioned.app/vocab/dpp#"
+    }
+  ],
+  "@type": "Product",
+  "@id": "https://example.com/products/laptop-pro-15",
+  "name": "Example Laptop Pro 15-inch",
+  "sku": "LPT-PRO-15",
+  "gs1:gtin": "07640176121234",
+  "brand": {
+    "@type": "Brand",
+    "name": "Example Compute",
+    "url": "https://example.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Example Compute Ltd",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NL"
+    },
+    "dpp:euOperator": "Example Compute Ltd"
+  },
+  "countryOfOrigin": "NL",
+  "dpp:dateManufactured": "2027-09-22",
+  "dpp:carbonFootprint": {
+    "@type": "QuantitativeValue",
+    "value": 280,
+    "unitCode": "KGM"
+  },
+  "dpp:recycledContentPercent": 28,
+  "dpp:expectedLifespan": {
+    "@type": "QuantitativeValue",
+    "value": 7,
+    "unitCode": "ANN"
+  },
+  "dpp:repairInstructions": "https://example.com/repair/laptop-pro-15",
+  "dpp:repairScore": 8.2,
+  "dpp:materialComposition": [
+    { "material": "recycled aluminium", "percentage": 42 },
+    { "material": "ABS plastic", "percentage": 18 },
+    { "material": "glass", "percentage": 12 },
+    { "material": "lithium-ion battery", "percentage": 10 },
+    { "material": "circuit board materials", "percentage": 18 }
+  ],
+  "dpp:conformityMarkings": ["CE", "RoHS", "REACH", "WEEE"]
+}

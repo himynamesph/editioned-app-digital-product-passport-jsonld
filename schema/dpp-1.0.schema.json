@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://editioned.app/vocab/dpp/dpp-1.0.schema.json",
+  "title": "Digital Product Passport JSON-LD Record",
+  "description": "JSON Schema for validating an EU DPP JSON-LD document using the dpp: vocabulary.",
+  "type": "object",
+  "required": ["@context", "@type"],
+  "properties": {
+    "@context": {
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array" },
+        { "type": "object" }
+      ]
+    },
+    "@type": { "type": "string" },
+    "@id": { "type": "string", "format": "uri" },
+
+    "dpp:editionNumber": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "This piece's number within the edition."
+    },
+    "dpp:editionTotal": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total number of pieces in the edition."
+    },
+    "dpp:euOperator": {
+      "type": "string",
+      "description": "Entity registered as responsible for the product in the EU."
+    },
+    "dpp:dateManufactured": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date the piece was manufactured."
+    },
+    "dpp:carbonFootprint": {
+      "type": "object",
+      "required": ["@type", "value", "unitCode"],
+      "properties": {
+        "@type": { "const": "QuantitativeValue" },
+        "value": { "type": "number", "minimum": 0 },
+        "unitCode": { "type": "string", "enum": ["KGM", "GRM", "TNE"] }
+      }
+    },
+    "dpp:recycledContentPercent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "dpp:expectedLifespan": {
+      "type": "object",
+      "required": ["@type", "value", "unitCode"],
+      "properties": {
+        "@type": { "const": "QuantitativeValue" },
+        "value": { "type": "number", "minimum": 0 },
+        "unitCode": { "type": "string", "enum": ["ANN", "MON", "DAY", "HUR"] }
+      }
+    },
+    "dpp:repairInstructions": {
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        {
+          "type": "object",
+          "properties": {
+            "@type": { "const": "URL" },
+            "url": { "type": "string", "format": "uri" }
+          }
+        }
+      ]
+    },
+    "dpp:conformityMarkings": {
+      "type": "array",
+      "items": { "type": "string" },
+      "examples": [["CE", "REACH", "RoHS"]]
+    },
+    "dpp:reachSvhc": { "type": "string" },
+    "dpp:materialComposition": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "material": { "type": "string" },
+          "percentage": { "type": "number", "minimum": 0, "maximum": 100 }
+        }
+      }
+    },
+    "dpp:recyclability": { "type": "string" },
+    "dpp:repairScore": { "type": "number", "minimum": 0, "maximum": 10 }
+  }
+}

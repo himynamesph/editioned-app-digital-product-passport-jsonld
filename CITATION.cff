@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this schema in your work, please cite it as below."
+title: "DPP Schema: Open JSON-LD vocabulary for the EU Digital Product Passport"
+abstract: "An open, CC0-licensed JSON-LD schema for Digital Product Passport data on the web. Production-tested vocabulary covering ESPR-mandated fields not yet in Schema.org or GS1. Designed as a CIRPASS-aligned bridge until CEN/CENELEC EN 18000 publishes."
+type: software
+version: "1.0.0"
+date-released: "2026-05-19"
+license: CC0-1.0
+url: "https://editioned.app/vocab/dpp"
+repository-code: "https://github.com/himynamesph/editioned-app-digital-product-passport-jsonld"
+keywords:
+  - digital product passport
+  - eu dpp
+  - espr
+  - json-ld
+  - cirpass
+  - sustainability
+  - circular economy
+  - shopify
+authors:
+  - name: "Editioned"
+    website: "https://editioned.app"

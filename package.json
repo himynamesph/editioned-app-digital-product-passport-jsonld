@@ -1,0 +1,45 @@
+{
+  "name": "@editioned/dpp-schema",
+  "version": "1.0.0",
+  "description": "Open JSON-LD schema for the EU Digital Product Passport. Production-tested vocabulary covering ESPR-mandated fields not yet in Schema.org or GS1.",
+  "keywords": [
+    "dpp",
+    "digital-product-passport",
+    "eu-dpp",
+    "jsonld",
+    "json-ld",
+    "schema",
+    "espr",
+    "cirpass",
+    "sustainability",
+    "shopify",
+    "provenance",
+    "circular-economy"
+  ],
+  "main": "schema/dpp.jsonld",
+  "files": [
+    "schema/",
+    "examples/",
+    "docs/",
+    "LICENSE",
+    "README.md",
+    "CITATION.cff"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himynamesph/editioned-app-digital-product-passport-jsonld.git"
+  },
+  "homepage": "https://editioned.app/vocab/dpp",
+  "bugs": {
+    "url": "https://github.com/himynamesph/editioned-app-digital-product-passport-jsonld/issues"
+  },
+  "author": "Editioned (https://editioned.app)",
+  "license": "CC0-1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

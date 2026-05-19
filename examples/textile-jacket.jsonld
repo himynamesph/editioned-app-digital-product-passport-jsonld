@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "gs1": "https://gs1.org/voc/",
+      "dpp": "https://editioned.app/vocab/dpp#"
+    }
+  ],
+  "@type": "Product",
+  "@id": "https://example.com/products/jacket-001",
+  "name": "Organic Cotton Field Jacket",
+  "sku": "JKT-001-XL",
+  "gs1:gtin": "09506000134352",
+  "brand": {
+    "@type": "Brand",
+    "name": "Example Atelier",
+    "url": "https://example.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Example Atelier",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IT",
+      "addressRegion": "Tuscany"
+    },
+    "dpp:euOperator": "Example Atelier S.r.l."
+  },
+  "countryOfOrigin": "IT",
+  "dpp:editionNumber": 7,
+  "dpp:editionTotal": 50,
+  "dpp:dateManufactured": "2026-03-14",
+  "dpp:carbonFootprint": {
+    "@type": "QuantitativeValue",
+    "value": 8.4,
+    "unitCode": "KGM"
+  },
+  "dpp:recycledContentPercent": 35,
+  "dpp:expectedLifespan": {
+    "@type": "QuantitativeValue",
+    "value": 10,
+    "unitCode": "ANN"
+  },
+  "dpp:repairInstructions": "https://example.com/care/jacket-001",
+  "dpp:materialComposition": [
+    { "material": "organic cotton", "percentage": 65 },
+    { "material": "recycled polyester", "percentage": 35 }
+  ],
+  "dpp:conformityMarkings": ["REACH", "OEKO-TEX"]
+}

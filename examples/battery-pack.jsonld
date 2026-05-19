@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "gs1": "https://gs1.org/voc/",
+      "dpp": "https://editioned.app/vocab/dpp#"
+    }
+  ],
+  "@type": "Product",
+  "@id": "https://example.com/products/bat-2026-a",
+  "name": "Industrial Lithium Battery Pack 5kWh",
+  "sku": "BAT-2026-A",
+  "gs1:gtin": "00614141000418",
+  "brand": {
+    "@type": "Brand",
+    "name": "Example Energy",
+    "url": "https://example.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Example Energy GmbH",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    },
+    "dpp:euOperator": "Example Energy GmbH"
+  },
+  "countryOfOrigin": "DE",
+  "dpp:dateManufactured": "2027-02-15",
+  "dpp:carbonFootprint": {
+    "@type": "QuantitativeValue",
+    "value": 320,
+    "unitCode": "KGM"
+  },
+  "dpp:recycledContentPercent": 12,
+  "dpp:expectedLifespan": {
+    "@type": "QuantitativeValue",
+    "value": 15,
+    "unitCode": "ANN"
+  },
+  "dpp:repairInstructions": "https://example.com/manuals/bat-2026",
+  "dpp:materialComposition": [
+    { "material": "lithium iron phosphate", "percentage": 28 },
+    { "material": "graphite", "percentage": 18 },
+    { "material": "aluminium", "percentage": 21 },
+    { "material": "copper", "percentage": 15 },
+    { "material": "electrolyte", "percentage": 12 },
+    { "material": "polymer separator", "percentage": 6 }
+  ],
+  "dpp:conformityMarkings": ["CE", "UN 38.3", "IEC 62619"]
+}

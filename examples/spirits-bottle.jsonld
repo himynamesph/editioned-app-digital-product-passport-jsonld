@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://schema.org",
+    {
+      "gs1": "https://gs1.org/voc/",
+      "dpp": "https://editioned.app/vocab/dpp#"
+    }
+  ],
+  "@type": "Product",
+  "@id": "https://example.com/products/single-malt-2018-cask-217",
+  "name": "Single Malt 2018 — Cask 217 Edition",
+  "sku": "SM-2018-217",
+  "gs1:gtin": "05901234123457",
+  "brand": {
+    "@type": "Brand",
+    "name": "Example Distillery",
+    "url": "https://example.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Example Distillery Ltd",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IE"
+    },
+    "dpp:euOperator": "Example Distillery Ltd"
+  },
+  "countryOfOrigin": "IE",
+  "dpp:editionNumber": 142,
+  "dpp:editionTotal": 600,
+  "dpp:dateManufactured": "2026-06-30",
+  "dpp:carbonFootprint": {
+    "@type": "QuantitativeValue",
+    "value": 1.8,
+    "unitCode": "KGM"
+  },
+  "dpp:recycledContentPercent": 60,
+  "dpp:expectedLifespan": {
+    "@type": "QuantitativeValue",
+    "value": 25,
+    "unitCode": "ANN"
+  },
+  "dpp:materialComposition": [
+    { "material": "recycled glass bottle", "percentage": 78 },
+    { "material": "cork stopper", "percentage": 8 },
+    { "material": "aluminium capsule", "percentage": 4 },
+    { "material": "paper label", "percentage": 10 }
+  ],
+  "dpp:conformityMarkings": ["REACH", "EU Spirit Drinks Regulation 2019/787"]
+}
