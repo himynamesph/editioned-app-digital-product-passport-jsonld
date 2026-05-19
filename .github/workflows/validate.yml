@@ -1,0 +1,45 @@
+$ cat /tmp/validate.yml.hold
+
+name: Validate JSON-LD examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli@5 ajv-formats@3
+
+      - name: Validate examples against JSON Schema
+        run: |
+          set -e
+          for f in examples/*.jsonld; do
+            echo ""
+            echo "==> Validating $f"
+            ajv validate \
+              -s schema/dpp-1.0.schema.json \
+              -d "$f" \
+              -c ajv-formats \
+              --strict=false \
+              --all-errors
+          done
+          echo ""
+          echo "All examples validated."
+
+      - name: Parse JSON-LD context (well-formed check)
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('schema/dpp.jsonld', 'utf8'))"
+          echo "schema/dpp.jsonld is valid JSON"
